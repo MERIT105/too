@@ -25,7 +25,7 @@ from datetime import datetime, timedelta, timezone
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 
 # Telegram bot token and channel ID
-TOKEN = '7848878988:AAFPqwQo6zx8j9jFH7QazrDdlasSQrWcIII'  # Replace with your actual bot token
+TOKEN = '7848878988:AAEmC9eQqgu84WP7nBVpDLPLpG-ESk74nnM'  # Replace with your actual bot token
 CHANNEL_ID = '--1002678249799'  # Replace with your specific channel or group ID
 # Initialize the bot
 bot = telebot.TeleBot(TOKEN)
@@ -84,7 +84,7 @@ def bgmi_command(message):
 
     # Ensure the bot only works in the specified channel or group
     if str(message.chat.id) != CHANNEL_ID:
-        bot.send_message(message.chat.id, " ⚠️⚠️ 𝗧𝗵𝗶𝘀 𝗯𝗼𝘁 𝗶𝘀 𝗻𝗼𝘁 𝗮𝘂𝘁𝗵𝗼𝗿𝗶𝘇𝗲𝗱 𝘁𝗼 𝗯𝗲 𝘂𝘀𝗲𝗱 𝗵𝗲𝗿𝗲 𝐂𝐎𝐌𝐄 𝐈𝐍 𝐆𝐑𝐎𝐔𝐏 :- @nobanbgmihackz  ⚠️ \n\n[ 𝗕𝗢𝗧 𝗠𝗔𝗗𝗘 𝗕𝗬 : OUR ADMINS ")
+        bot.send_message(message.chat.id, " ⚠️⚠️ 𝗧𝗵𝗶𝘀 𝗯𝗼𝘁 𝗶𝘀 𝗻𝗼𝘁 𝗮𝘂𝘁𝗵𝗼𝗿𝗶𝘇𝗲𝗱 𝘁𝗼 𝗯𝗲 𝘂𝘀𝗲𝗱 𝗵𝗲𝗿𝗲 𝐂𝐎𝐌𝐄 𝐈𝐍 𝐆𝐑𝐎𝐔𝐏 :- @freebotalone  ⚠️ \n\n[ 𝗕𝗢𝗧 𝗠𝗔𝗗𝗘 𝗕𝗬 : OUR ADMINS ")
         return
 
     # Reset counts daily
@@ -148,7 +148,7 @@ def bgmi_command(message):
         target_ip, target_port, user_duration = args
 
         # Validate inputs
-        MAX_DURATION = 180
+        MAX_DURATION = 240
         if int(user_duration) > MAX_DURATION:
             bot.send_message(
                 message.chat.id,
@@ -171,7 +171,7 @@ def bgmi_command(message):
         if user_id not in EXEMPTED_USERS:
             user_cooldowns[user_id] = datetime.now() + timedelta(seconds=COOLDOWN_DURATION)
 
-        # Notify that the attack will run with the user-defined duration (max 180 seconds)
+        # Notify that the attack will run with the user-defined duration (max 240 seconds)
         default_duration = int(user_duration)
         bot.send_message(
             message.chat.id,
